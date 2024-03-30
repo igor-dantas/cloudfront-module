@@ -13,6 +13,17 @@ variable "bucket_name" {
   description = "name of your s3 bucket"
 }
 
+
+variable "tags" {
+  type        = map(any)
+  description = "map of tags to add on all aws resources"
+}
+
+variable "block_public_acls" {
+  type        = bool
+  description = "Specifies whether public access to Access Control Lists (ACLs) is blocked."
+}
+
 variable "block_public_policy" {
   type        = bool
   description = "Specifies whether public policies are blocked for the bucket."
@@ -26,11 +37,6 @@ variable "ignore_public_acls" {
 variable "restrict_public_buckets" {
   type        = bool
   description = "Specifies whether public buckets are restricted."
-}
-
-variable "block_public_acls" {
-  type        = bool
-  description = "Specifies whether public access to Access Control Lists (ACLs) is blocked."
 }
 
 variable "website_dir" {
