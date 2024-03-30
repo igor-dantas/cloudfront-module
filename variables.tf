@@ -4,6 +4,6 @@ variable "project_name" {
 }
 
 variable "index_document" {
-  type = string
+  type        = string
   description = "the name of index file"
 }
