@@ -10,3 +10,8 @@ module "s3_static_hosting" {
   restrict_public_buckets = var.restrict_public_buckets
   website_dir             = var.website_dir
 }
+
+module "cloudfront" {
+  source    = "./module/cloudfront"
+  origin_id = module.s3_static_hosting.origin_id_output
+}
