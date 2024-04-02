@@ -9,3 +9,7 @@ output "origin_id" {
 output "static_url" {
   value = module.s3_static_hosting.static_url_output
 }
+
+output "url_cloudfront" {
+  value = module.cloudfront.distribution_url
+}
