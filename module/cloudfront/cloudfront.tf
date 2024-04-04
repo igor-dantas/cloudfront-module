@@ -3,10 +3,10 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     domain_name = var.origin_id_output
     origin_id   = var.origin_id_output
   }
-
   enabled             = true
   is_ipv6_enabled     = false
   default_root_object = "index.html"
+
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
@@ -89,4 +89,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 }
 
+
+resource "aws_cloudfront_origin_access_identity" "origin_access" {
+  comment = "teste"
+}
 
